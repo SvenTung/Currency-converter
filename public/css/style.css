@@ -1,0 +1,71 @@
+body{
+  font-family: arial;
+  margin: 0px;
+}
+
+h1{
+  margin: 0px;
+  padding: 30px;
+  background-color: gray;
+  font-family: georgia;
+  font-size: 2.5em;
+}
+
+#newAmountLabel{
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+#selectLabel{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#app{
+  padding: 40px;
+}
+
+form, #select-area{
+  margin-bottom: 20px;
+  display:flex;
+  justify-content:center;
+}
+
+#displayAmountArea{
+  display: flex;
+  justify-content: center;
+}
+
+input[type=submit]{
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #57BA8A;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+input[type=submit]:hover{
+  background-color: green;
+}
+
+input{
+  padding: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+li{
+  list-style: none;
+  padding: 10px;
+}
+
+ul{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  padding: 0px;
+}

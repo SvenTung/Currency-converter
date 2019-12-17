@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Caleb's Currency Converter</title>
+    <script src="./js/bundle.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+
+  <body>
+    <h1>Currency Converter</h1>
+
+    <div id="app">
+
+      <form v-on:submit.prevent="convertMoney">
+        <label id="newAmountLabel"for="newAmount">Enter the amount that you want converted:</label>
+        <input id="newAmount" type="number" min="0" value="100" step=".01" v-model.number="newAmount"/>
+        <input type="submit" value="Convert"/>
+      </form>
+
+      <div id="select-area">
+        <label id="selectLabel" for="startCurrency">Select the currency that you are starting with: </label>
+        <select id="startCurrency" v-model="startCurrency">
+          <option selected :value="1">EUR: 1</option>
+          <option v-for="(rate, currency) in allCurrencies" :value="rate">{{currency}}: {{rate}}</option>
+        </select>
+
+        <label id="selectLabel" for="endCurrency">Select the currency that you want to convert to: </label>
+        <select id="endCurrency" v-model="endCurrency">
+          <option selected :value="1">EUR: 1</option>
+          <option v-for="(rate, currency) in allCurrencies" :value="rate">{{currency}}: {{rate}}</option>
+        </select>
+      </div>
+
+      <div id="displayAmountArea">
+        <h3 v-if="convertedAmount != 0">{{(Math.round(newAmount * 100) / 100).toFixed(2)}} is converted to {{(Math.round(convertedAmount * 100) / 100).toFixed(2)}}</h3>
+      </div>
+
+
+      <ul>
+        <li v-for="(rate, currency) in allCurrencies">
+          {{currency}}: {{rate}}
+        </li>
+      </ul>
+
+
+    </div>
+
+  </body>
+
+</html>
